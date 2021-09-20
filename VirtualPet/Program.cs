@@ -1,12 +1,23 @@
 ﻿using System;
+using System.Threading;
 
 namespace VirtualPet
 {
     class Program
     {
+        public static Pet myPet = new Pet();
+        public static Timer _timer = null;
+
         static void Main(string[] args)
         {
          
+            _timer = new Timer(Tick, null, 0, 2000);
+
+           static void Tick(Object o)
+            {
+                myPet.Update();
+            }
+
 
             bool keepThinking = true;
             while (keepThinking)
@@ -77,6 +88,9 @@ namespace VirtualPet
            
             Console.Clear();
             Console.WriteLine("Create Your Pet\n");
+
+            Console.WriteLine("What would you like to name your pet?");
+            myPet.name = Console.ReadLine();
 
    
             Console.Write("Press enter to return to the Main Menu");

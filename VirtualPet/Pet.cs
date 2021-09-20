@@ -29,6 +29,8 @@ namespace VirtualPet
         public void Feed()
         {
             // what does feeding do?
+            this.hunger = 0;
+
         }
         public void Feed(int amt)
         {
@@ -36,11 +38,12 @@ namespace VirtualPet
         }
         public void Doctor()
         {
-            // what does doctoring do?
+            this.health = 100;
         }
         public void Play()
         {
             // what does playing do?
+            this.boredom = 0;
         }
 
         public void Update()
@@ -48,6 +51,12 @@ namespace VirtualPet
             // increases hunger
             // decreases health
             // ...
+            hunger += 10;
+            boredom += 10;
+            health -= 10;
+
+
+
         }
     }
 

@@ -142,8 +142,11 @@ namespace VirtualPet
             Console.WriteLine("Play With Your Pet\n");
 
             // Enter your solution here
-            //myPet.Play();
+            Console.WriteLine("Select the pet you wish to play with");
             Pet myPet = myShelter.SelectPet();
+            myPet.Play();
+            Console.WriteLine("\n" + myPet.name + " is really happy to get play time with you and is no longer bored!\n");
+
 
             Console.Write("Press enter to return to the Main Menu");
             Console.ReadLine();
@@ -156,6 +159,10 @@ namespace VirtualPet
             Console.WriteLine("Feed Your Pet\n");
 
             // Enter your solution here
+            Console.WriteLine("Select the pet you wish to feed");
+            Pet myPet = myShelter.SelectPet();
+            myPet.Feed();
+            Console.WriteLine("\n" + myPet.name + " is happily stuffed!\n");
 
             Console.Write("Press enter to return to the Main Menu");
             Console.ReadLine();
@@ -169,9 +176,11 @@ namespace VirtualPet
             Console.WriteLine("Take Pet to Vet\n");
 
             // Enter your solution here
-
-            Pet selectedPet = myShelter.SelectPet();
-            selectedPet.Doctor();
+            Console.WriteLine("Select the pet you wish to take to the doctor");
+            Pet myPet = myShelter.SelectPet();
+            myPet.Doctor();
+            Console.WriteLine("\n" + myPet.name + " is feeling so much better now!\n");
+            
 
             Console.Write("Press enter to return to the Main Menu");
             Console.ReadLine();
@@ -180,4 +189,4 @@ namespace VirtualPet
        
         }
     }
-}
+

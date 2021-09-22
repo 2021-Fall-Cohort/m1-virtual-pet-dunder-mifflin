@@ -11,14 +11,14 @@ namespace VirtualPet
 
         static void Tick(Object o)
         {
-            //myPet.Update();
+            myPet.Update();
             //myShelter.Update();
         }
 
         static void Main(string[] args)
         {
          
-            _timer = new Timer(Tick, null, 0, 2000);
+            _timer = new Timer(Tick, null, 0, 30000);
 
            
 
@@ -102,6 +102,8 @@ namespace VirtualPet
             Console.Clear();
             Console.WriteLine("Check Pet Status\n");
 
+            Console.WriteLine("Select the pet you wish to check on");
+            Pet myPet = myShelter.SelectPet();
             myPet.PetStatus();
 
             Console.Write("Press enter to return to the Main Menu");
@@ -134,8 +136,15 @@ namespace VirtualPet
             // Enter your solution here
             Console.WriteLine("Select the pet you wish to feed");
             Pet myPet = myShelter.SelectPet();
+            Console.WriteLine(myPet.name + "'s current hunger level is: " + myPet.hunger);
+           
+
             myPet.Feed();
             Console.WriteLine("\n" + myPet.name + " is happily stuffed!\n");
+
+            Console.WriteLine(myPet.name + "'s updated hunger level is: " + myPet.hunger);
+            
+
 
             Console.Write("Press enter to return to the Main Menu");
             Console.ReadLine();

@@ -5,7 +5,7 @@ namespace VirtualPet
 {
     class Program
     {
-        //public static Pet myPet = new Pet();
+        public static Pet myPet = new Pet();
         public static Shelter myShelter = new Shelter();
         public static Timer _timer = null; //Status Timer
 
@@ -35,12 +35,6 @@ namespace VirtualPet
                 Console.WriteLine("3. Play with pet");
                 Console.WriteLine("4. Feed pet");
                 Console.WriteLine("5. Take pet to vet");
-                //Console.WriteLine("6. Add Another Pet To The Shelter");
-                //Console.WriteLine("7. Age Category");
-                //Console.WriteLine("8. Words to Digits");
-                //Console.WriteLine("9. Which Name is Longer?");
-                //Console.WriteLine("10. Are these Names the Same?");
-                //Console.WriteLine("11. Name and Place of Birth");
                 Console.WriteLine("Press Q to quit");
                 string userChoice = Console.ReadLine().ToLower();
                 switch (userChoice)
@@ -60,24 +54,6 @@ namespace VirtualPet
                     case "5":
                         TakePettoVet();
                         break;
-                    //case "6":
-                    //    RestaurantBill();
-                    //    break;
-                    //case "7":
-                    //    AgeCategory();
-                    //    break;
-                    //case "8":
-                    //    WordsToDigits();
-                    //    break;
-                    //case "9":
-                    //    WhichNameIsLonger();
-                    //    break;
-                    //case "10":
-                    //    AreNamesSame();
-                    //    break;
-                    //case "11":
-                    //    NameAndBirthplace();
-                    //    break;
                     case "q":
                         keepThinking = false;
                         Console.WriteLine("Good bye!");
@@ -94,33 +70,30 @@ namespace VirtualPet
             Console.Clear();
             Console.WriteLine("Create Your Pet\n");
 
+
             Console.WriteLine("What is the name of your pet");
-
-
             string name = Console.ReadLine();
+
+
             Console.WriteLine("What is the species of your pet");
-
-
             string species = Console.ReadLine();
 
-            Console.WriteLine("What is the age of your pet");
 
+            Console.WriteLine("What is the age of your pet");
             int age = Convert.ToInt32(Console.ReadLine());
 
+
             Console.WriteLine("What is the color of your pet");
-
-
             string color = Console.ReadLine();
 
 
+           myPet = new Pet(name, species, age, color);
+           myShelter.ListOfPets.Add(myPet);
 
-            Pet pet = new Pet(name, species, age, color);
-            myShelter.ListOfPets.Add(pet);
-
-
+            Console.WriteLine("Congratulations! Your new " + myPet.species + " named " + myPet.name + " has been created! They are " + myPet.age + " years old and their color is " + myPet.color); 
 
             Console.Write("Press enter to return to the Main Menu");
-                Console.ReadLine();
+            Console.ReadLine();
         }
 
         static void CheckPetStatus()
@@ -129,7 +102,7 @@ namespace VirtualPet
             Console.Clear();
             Console.WriteLine("Check Pet Status\n");
 
-            // Enter your solution here
+            myPet.PetStatus();
 
             Console.Write("Press enter to return to the Main Menu");
             Console.ReadLine();
@@ -176,8 +149,7 @@ namespace VirtualPet
             Console.Write("Press enter to return to the Main Menu");
             Console.ReadLine();
         }
-
        
-        }
     }
 }
+

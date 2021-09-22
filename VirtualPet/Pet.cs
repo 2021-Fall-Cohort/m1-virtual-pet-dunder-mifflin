@@ -77,9 +77,3 @@ namespace VirtualPet
     }
 }
 
-
-
-//Create Pet Class (properties and method should go in PET class and not Program
-/*Ability for players to see the current status of a pet, such as hunger, boredom, and health
-Ability for players to interact with pet, such as feed, play, and take to doctor
-As players interact with pet, the pet’s status changes constructor*/

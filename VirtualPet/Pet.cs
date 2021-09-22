@@ -7,14 +7,14 @@ namespace VirtualPet
     public class Pet
     {
         public string name;
-        string species;
-        int age;
-        string color;
-        int hunger;
-        int boredom;
-        int health;
+        public string species;
+        public int age;
+        public string color;
+        public int hunger;
+        public int boredom;
+        public int health;
         public Pet(string name, string species, int age, string color)
-        
+
         {
             this.name = name;
             this.species = species;
@@ -65,15 +65,21 @@ namespace VirtualPet
             boredom += 10;
             health -= 10;
 
-
-
         }
-    }
 
+        public void PetStatus()
+        {
+            Console.WriteLine("Your Pet Status is: Hunger: " + this.hunger + " Health: " + this.health + " Boredom: " + this.boredom);
+            Console.WriteLine("Your Pet Attributes are: Name: " + this.name + " Species: " + this.species + " Age: " + this.age + " Color: " + this.color);
+        }
+
+
+    }
 }
+
+
 
 //Create Pet Class (properties and method should go in PET class and not Program
 /*Ability for players to see the current status of a pet, such as hunger, boredom, and health
 Ability for players to interact with pet, such as feed, play, and take to doctor
-As players interact with pet, the pet’s status changes
-//constructor
+As players interact with pet, the pet’s status changes constructor*/

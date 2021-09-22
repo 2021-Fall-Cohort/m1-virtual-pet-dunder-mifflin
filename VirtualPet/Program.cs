@@ -35,6 +35,8 @@ namespace VirtualPet
                 Console.WriteLine("3. Play with pet");
                 Console.WriteLine("4. Feed pet");
                 Console.WriteLine("5. Take pet to vet");
+                Console.WriteLine("6. Remove Pet");
+                Console.WriteLine("7. Check Status of All Pets");
                 Console.WriteLine("Press Q to quit");
                 string userChoice = Console.ReadLine().ToLower();
                 switch (userChoice)
@@ -53,6 +55,12 @@ namespace VirtualPet
                         break;
                     case "5":
                         TakePettoVet();
+                        break;
+                   // case "6":
+                     //   Remove Pet();
+                       // break;
+                    case "7":
+                      CheckAllPets();
                         break;
                     case "q":
                         keepThinking = false;
@@ -163,6 +171,15 @@ namespace VirtualPet
             myPet.Doctor();
             Console.WriteLine("\n" + myPet.name + " is feeling so much better now!\n");
             
+
+            Console.Write("Press enter to return to the Main Menu");
+            Console.ReadLine();
+        }
+        static void CheckAllPets()
+        {
+            Console.Clear();
+            Console.WriteLine("Check Status of All Pets\n");
+            myShelter.allPetsStatus();
 
             Console.Write("Press enter to return to the Main Menu");
             Console.ReadLine();

@@ -6,13 +6,20 @@ namespace VirtualPet
 {
     public class Pet
     {
-        string name;
+        public string name;
+        string species;
+        int age;
+        string color;
         int hunger;
         int boredom;
         int health;
-        public Pet(string name)
+        public Pet(string name, string species, int age, string color)
+        
         {
             this.name = name;
+            this.species = species;
+            this.age = age;
+            this.color = color;
             this.hunger = 0;
             this.boredom = 0;
             this.health = 100;
@@ -21,6 +28,9 @@ namespace VirtualPet
         public Pet()
         {
             this.name = "Default Pet";
+            this.species = null;
+            this.age = 0;
+            this.color = null;
             this.hunger = 0;
             this.boredom = 0;
             this.health = 100;

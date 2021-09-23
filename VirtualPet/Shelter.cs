@@ -12,7 +12,7 @@ namespace VirtualPet
 
 
         // name
-        // list of pets
+        // list of pets - name only
 
         // maximum occupancy
 
@@ -30,13 +30,10 @@ namespace VirtualPet
         }
         public void allPetsStatus()
         {
-            int index = 1;
             foreach (Pet p in ListOfPets)
             {
                 Console.WriteLine("Your Pet Status is: Hunger: " + p.hunger + " Health: " + p.health + " Boredom: " + p.boredom);
                 Console.WriteLine("Your Pet Attributes are: Name: " + p.name + " Species: " + p.species + " Age: " + p.age + " Color: " + p.color);
-
-                index++;
             }
 
         }

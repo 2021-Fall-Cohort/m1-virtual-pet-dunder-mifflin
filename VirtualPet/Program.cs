@@ -9,28 +9,26 @@ namespace VirtualPet
         public static Shelter myShelter = new Shelter();
         public static Timer _timer = null; //Status Timer
 
-        static void Tick(Object o)
+        public static void Tick(Object o)
         {
             myPet.Update();
             //myShelter.Update();
         }
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
          
             _timer = new Timer(Tick, null, 0, 30000);
 
-           
-
 
             bool keepThinking = true;
             while (keepThinking)
-                //Menu of options for Virtual Pet
+            //Menu of options for Virtual Pet
             {
                 Console.Clear();
                 Console.WriteLine("Hello! Welcome to Virtual Pets");
                 Console.WriteLine("What would you like to do?");
-                Console.WriteLine("1. Create a pet");
+                Console.WriteLine("1. Add a pet to the Shelter");
                 Console.WriteLine("2. Check pet status");
                 Console.WriteLine("3. Play with pet");
                 Console.WriteLine("4. Feed pet");
@@ -72,7 +70,7 @@ namespace VirtualPet
             }
         }
 
-        static void CreatePet()
+        public static void CreatePet()
         {
             // Pet Creation Code
             Console.Clear();
@@ -98,15 +96,15 @@ namespace VirtualPet
            myPet = new Pet(name, species, age, color);
            myShelter.ListOfPets.Add(myPet);
 
-            Console.WriteLine("Congratulations! Your new " + myPet.species + " named " + myPet.name + " has been created! They are " + myPet.age + " years old and their color is " + myPet.color); 
+            Console.WriteLine("Thank you for bringing this animal to the shelter.  It is in good hands and will be adopted out ASAP!\n");
 
             Console.Write("Press enter to return to the Main Menu");
             Console.ReadLine();
         }
 
-        static void CheckPetStatus()
+        public static void CheckPetStatus()
         {
-            
+
             Console.Clear();
             Console.WriteLine("Check Pet Status\n");
 
@@ -118,9 +116,9 @@ namespace VirtualPet
             Console.ReadLine();
         }
 
-        static void PlayWithPet()
+        public static void PlayWithPet()
         {
-            
+
             Console.Clear();
             Console.WriteLine("Play With Your Pet\n");
 
@@ -135,9 +133,9 @@ namespace VirtualPet
             Console.ReadLine();
         }
 
-        static void FeedPet()
+        public static void FeedPet()
         {
-            
+
             Console.Clear();
             Console.WriteLine("Feed Your Pet\n");
 
@@ -158,9 +156,9 @@ namespace VirtualPet
             Console.ReadLine();
         }
 
-        static void TakePettoVet()
+        public static void TakePettoVet()
         {
-          
+
 
             Console.Clear();
             Console.WriteLine("Take Pet to Vet\n");
@@ -175,16 +173,25 @@ namespace VirtualPet
             Console.Write("Press enter to return to the Main Menu");
             Console.ReadLine();
         }
-        static void CheckAllPets()
+      
+        public static void CheckAllPets()
         {
             Console.Clear();
             Console.WriteLine("Check Status of All Pets\n");
             myShelter.allPetsStatus();
-
             Console.Write("Press enter to return to the Main Menu");
             Console.ReadLine();
         }
-       
+
+        public static void AdoptPetFromShelter()
+        {
+
+            Console.WriteLine("Welcome to the Shelter!  Here is a list of the pets available for adoption.\n");
+            Pet selectedPet = myShelter.SelectPet();
+            //selectedPet.shelter();
+
+            myShelter.ListOfPets.Remove(selectedPet);
+        }
     }
 }
 

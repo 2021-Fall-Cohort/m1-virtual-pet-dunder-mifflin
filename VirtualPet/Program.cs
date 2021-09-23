@@ -5,22 +5,20 @@ namespace VirtualPet
 {
     class Program
     {
-        //public static Pet myPet = new Pet();
+        public static Pet myPet = new Pet();
         public static Shelter myShelter = new Shelter();
         public static Timer _timer = null; //Status Timer
 
         public static void Tick(Object o)
         {
-            //myPet.Update();
+            myPet.Update();
             //myShelter.Update();
         }
 
         public static void Main(string[] args)
         {
-
-            _timer = new Timer(Tick, null, 0, 2000);
-
-
+         
+            _timer = new Timer(Tick, null, 0, 30000);
 
 
             bool keepThinking = true;
@@ -35,12 +33,8 @@ namespace VirtualPet
                 Console.WriteLine("3. Play with pet");
                 Console.WriteLine("4. Feed pet");
                 Console.WriteLine("5. Take pet to vet");
-                Console.WriteLine("6. Adopt a Pet from the Shelter");
+                Console.WriteLine("6. Remove Pet");
                 Console.WriteLine("7. Check Status of All Pets");
-                //Console.WriteLine("8. Get List of All Pets in the Shelter");
-                //Console.WriteLine("9. Which Name is Longer?");
-                //Console.WriteLine("10. Are these Names the Same?");
-                //Console.WriteLine("11. Name and Place of Birth");
                 Console.WriteLine("Press Q to quit");
                 string userChoice = Console.ReadLine().ToLower();
                 switch (userChoice)
@@ -60,24 +54,12 @@ namespace VirtualPet
                     case "5":
                         TakePettoVet();
                         break;
-                    case "6":
-                        AdoptPetFromShelter();
-                        break;
+                   // case "6":
+                     //   Remove Pet();
+                       // break;
                     case "7":
-                        AdoptPetFromShelter();
+                      CheckAllPets();
                         break;
-                    case "8":
-                        //GetListOfPetsInShelter();
-                        break;
-                    //case "9":
-                    //    WhichNameIsLonger();
-                    //    break;
-                    //case "10":
-                    //    AreNamesSame();
-                    //    break;
-                    //case "11":
-                    //    NameAndBirthplace();
-                    //    break;
                     case "q":
                         keepThinking = false;
                         Console.WriteLine("Good bye!");
@@ -94,31 +76,27 @@ namespace VirtualPet
             Console.Clear();
             Console.WriteLine("Create Your Pet\n");
 
+
             Console.WriteLine("What is the name of your pet");
-
-
             string name = Console.ReadLine();
+
+
             Console.WriteLine("What is the species of your pet");
-
-
             string species = Console.ReadLine();
 
-            Console.WriteLine("What is the age of your pet");
 
+            Console.WriteLine("What is the age of your pet");
             int age = Convert.ToInt32(Console.ReadLine());
 
+
             Console.WriteLine("What is the color of your pet");
-
-
             string color = Console.ReadLine();
 
 
-
-            Pet pet = new Pet(name, species, age, color);
-            myShelter.ListOfPets.Add(pet);
+           myPet = new Pet(name, species, age, color);
+           myShelter.ListOfPets.Add(myPet);
 
             Console.WriteLine("Thank you for bringing this animal to the shelter.  It is in good hands and will be adopted out ASAP!\n");
-
 
             Console.Write("Press enter to return to the Main Menu");
             Console.ReadLine();
@@ -130,7 +108,9 @@ namespace VirtualPet
             Console.Clear();
             Console.WriteLine("Check Pet Status\n");
 
-            // Enter your solution here
+            Console.WriteLine("Select the pet you wish to check on");
+            Pet myPet = myShelter.SelectPet();
+            myPet.PetStatus();
 
             Console.Write("Press enter to return to the Main Menu");
             Console.ReadLine();
@@ -143,8 +123,11 @@ namespace VirtualPet
             Console.WriteLine("Play With Your Pet\n");
 
             // Enter your solution here
-            //myPet.Play();
+            Console.WriteLine("Select the pet you wish to play with");
             Pet myPet = myShelter.SelectPet();
+            myPet.Play();
+            Console.WriteLine("\n" + myPet.name + " is really happy to get play time with you and is no longer bored!\n");
+
 
             Console.Write("Press enter to return to the Main Menu");
             Console.ReadLine();
@@ -157,6 +140,17 @@ namespace VirtualPet
             Console.WriteLine("Feed Your Pet\n");
 
             // Enter your solution here
+            Console.WriteLine("Select the pet you wish to feed");
+            Pet myPet = myShelter.SelectPet();
+            Console.WriteLine(myPet.name + "'s current hunger level is: " + myPet.hunger);
+           
+
+            myPet.Feed();
+            Console.WriteLine("\n" + myPet.name + " is happily stuffed!\n");
+
+            Console.WriteLine(myPet.name + "'s updated hunger level is: " + myPet.hunger);
+            
+
 
             Console.Write("Press enter to return to the Main Menu");
             Console.ReadLine();
@@ -170,54 +164,24 @@ namespace VirtualPet
             Console.WriteLine("Take Pet to Vet\n");
 
             // Enter your solution here
-
-            Pet selectedPet = myShelter.SelectPet();
-            selectedPet.Doctor();
+            Console.WriteLine("Select the pet you wish to take to the doctor");
+            Pet myPet = myShelter.SelectPet();
+            myPet.Doctor();
+            Console.WriteLine("\n" + myPet.name + " is feeling so much better now!\n");
+            
 
             Console.Write("Press enter to return to the Main Menu");
             Console.ReadLine();
         }
-
-
-    //Add a Pet to shelter
-
-    //public static void CreatePet()
-    //    {
-    //        Console.Clear();
-    //        Console.WriteLine("Add a Pet to the Shelter\n");
-
-    //        // Enter your solution here
-    //        // Create shelter pet list
-
-    //        Console.Clear();
-    //        Console.WriteLine("Create Your Pet\n");
-
-    //        Console.WriteLine("What is the name of your pet");
-
-
-    //        string name = Console.ReadLine();
-    //        Console.WriteLine("What is the species of your pet");
-
-
-    //        string species = Console.ReadLine();
-
-    //        Console.WriteLine("What is the age of your pet");
-
-    //        int age = Convert.ToInt32(Console.ReadLine());
-
-    //        Console.WriteLine("What is the color of your pet");
-
-    //        string color = Console.ReadLine();
-
-    //        Pet pet = new Pet(name, species, age, color);
-    //        myShelter.ListOfPets.Add(pet);
-
-    //        Console.WriteLine("Thank you for bringing this animal to the shelter.  It is in good hands and will be adopted out ASAP!\n");
-
-    //        Console.Write("Press enter to return to the Main Menu");
-    //        Console.ReadLine();
-    //    }
-        //Adopt a Pet from the shelter
+      
+        public static void CheckAllPets()
+        {
+            Console.Clear();
+            Console.WriteLine("Check Status of All Pets\n");
+            myShelter.allPetsStatus();
+            Console.Write("Press enter to return to the Main Menu");
+            Console.ReadLine();
+        }
 
         public static void AdoptPetFromShelter()
         {
@@ -228,7 +192,7 @@ namespace VirtualPet
 
             myShelter.ListOfPets.Remove(selectedPet);
         }
-
-    
     }
 }
+
+

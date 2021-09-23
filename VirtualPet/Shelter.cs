@@ -28,8 +28,14 @@ namespace VirtualPet
 
             return ListOfPets[indexSelected - 1];
         }
+        public void allPetsStatus()
+        {
+            foreach (Pet p in ListOfPets)
+            {
+                Console.WriteLine("Your Pet Status is: Hunger: " + p.hunger + " Health: " + p.health + " Boredom: " + p.boredom);
+                Console.WriteLine("Your Pet Attributes are: Name: " + p.name + " Species: " + p.species + " Age: " + p.age + " Color: " + p.color);
+            }
 
-            
-        
+        }
     }
 }

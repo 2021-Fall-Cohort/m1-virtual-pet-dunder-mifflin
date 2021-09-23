@@ -54,9 +54,9 @@ namespace VirtualPet
                     case "5":
                         TakePettoVet();
                         break;
-                   // case "6":
-                     //   Remove Pet();
-                       // break;
+                   case "6":
+                     RemovePet();
+                      break;
                     case "7":
                       CheckAllPets();
                         break;
@@ -183,7 +183,7 @@ namespace VirtualPet
             Console.ReadLine();
         }
 
-        public static void AdoptPetFromShelter()
+        public static void RemovePet()
         {
 
             Console.WriteLine("Welcome to the Shelter!  Here is a list of the pets available for adoption.\n");

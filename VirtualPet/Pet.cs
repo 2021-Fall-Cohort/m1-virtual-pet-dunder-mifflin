@@ -75,8 +75,8 @@ namespace VirtualPet
             Console.WriteLine("Your Pet Attributes are: Name: " + this.name + " Species: " + this.species + " Age: " + this.age + " Color: " + this.color);
         }
 
-        
-        }
+    }
+}
 
 //Create Pet Class (properties and method should go in PET class and not Program
 //*Ability for players to see the current status of a pet, such as hunger, boredom, and health

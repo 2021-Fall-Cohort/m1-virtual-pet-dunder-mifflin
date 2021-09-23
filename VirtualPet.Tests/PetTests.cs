@@ -12,9 +12,12 @@ namespace VirtualPet.Tests
             testPet = new Pet();
         }
 
-        [Fact]
+        [Fact] // passes
         public void Pet_Constructor_Should_Instantiate_Pet_Object()
         {
+            // Act
+            Pet testPet = new Pet("George", "dog", 12, "green");
+            
             Assert.NotNull(testPet);
         }
 
@@ -22,38 +25,41 @@ namespace VirtualPet.Tests
         // Uncomment code in the test body one test at a time
         // Add source code to eliminate the build errors (red squiggle) and pass the test
         
-        [Fact]
+        [Fact] // passes
         public void Pet_Should_Have_Name()
         {
-            // testPet.Name = "Pet Name"; 
+            testPet.name = "Pet Name"; 
             
-            // Assert.Equal("Pet Name", testPet.Name);
+            Assert.Equal("Pet Name", testPet.name);
         }
 
-        [Fact]
+        [Fact] // passes
         public void SetName_Should_Assign_Pet_Name_Property()
         {
-            // testPet.Name("Fluffy");
+            testPet.name = ("Fluffy");
 
-            // Assert.Equal("Fluffy", testPet.Name);
+            Assert.Equal("Fluffy", testPet.name);
         }
 
         [Fact]
         public void GetName_Should_Get_Pet_Name_Value()
         {
-            // testPet.SetName("Fido");
+            public static void Main(string[] args) { 
+                
+            public String getName() { return name; }
+            //    testPet.SetName = ("Fido");
 
-            // string testPetName = testPet.GetName();
+            //{ string testPetName = testPet.GetName(); }
 
-            // Assert.Equal("Fido", testPetName);
+            Assert.Equal("Fido", testPetName);
         }
 
         [Fact]
         public void Pet_Should_Have_Species()
         {
-            // testPet.Species = "Pet Species";
+            testPet.species = "Pet Species";
             
-            // Assert.Equal("Pet Species", testPet.Species);
+            Assert.Equal("Pet Species", testPet.species);
         }
 
         [Fact]

@@ -8,6 +8,10 @@ namespace VirtualPet
         public static Pet myPet = new Pet();
         public static Shelter myShelter = new Shelter();
         public static Timer _timer = null; //Status Timer
+        
+        
+
+        
 
         public static void Tick(Object o)
         {
@@ -20,7 +24,7 @@ namespace VirtualPet
          
             _timer = new Timer(Tick, null, 0, 30000);
 
-
+            
             bool keepThinking = true;
             while (keepThinking)
             //Menu of options for Virtual Pet
@@ -69,13 +73,21 @@ namespace VirtualPet
                 }
             }
         }
-
+        bool robot;
         public static void CreatePet()
+           
         {
             // Pet Creation Code
             Console.Clear();
             Console.WriteLine("Create Your Pet\n");
+           
+            Console.WriteLine("Would you like an organic or robotic pet?");
+            string Petchoice = Console.ReadLine();
 
+            if (Petchoice == "robotic")
+            {
+                bool robot = true;
+            }
 
             Console.WriteLine("What is the name of your pet");
             string name = Console.ReadLine();
@@ -93,7 +105,7 @@ namespace VirtualPet
             string color = Console.ReadLine();
 
 
-           myPet = new Pet(name, species, age, color);
+           myPet = new Pet(robot, name, species, age, color);
            myShelter.ListOfPets.Add(myPet);
 
             Console.WriteLine("Thank you for bringing this animal to the shelter.  It is in good hands and will be adopted out ASAP!\n");

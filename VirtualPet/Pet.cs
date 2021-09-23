@@ -14,9 +14,12 @@ namespace VirtualPet
         public int hunger;
         public int boredom;
         public int health;
-        public Pet(string name, string species, int age, string color)
+        public bool robot;
+        
+        public Pet(bool robot, string name, string species, int age, string color)
 
         {
+            this.robot = false;
             this.name = name;
             this.species = species;
             this.age = age;
@@ -28,6 +31,7 @@ namespace VirtualPet
 
         public Pet()
         {
+            this.robot = false;
             this.name = "Default Pet";
             this.species = null;
             this.age = 0;

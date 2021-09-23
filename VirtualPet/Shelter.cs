@@ -19,15 +19,26 @@ namespace VirtualPet
         public Pet SelectPet()
         {
             int index = 1;
-            foreach(Pet p in ListOfPets)
+            foreach (Pet p in ListOfPets)
             {
                 Console.WriteLine(index + ". " + p.name);
                 index++;
             }
             int indexSelected = Convert.ToInt32(Console.ReadLine());
-            
+
             return ListOfPets[indexSelected - 1];
         }
+        public void allPetsStatus()
+        {
+            int index = 1;
+            foreach (Pet p in ListOfPets)
+            {
+                Console.WriteLine("Your Pet Status is: Hunger: " + p.hunger + " Health: " + p.health + " Boredom: " + p.boredom);
+                Console.WriteLine("Your Pet Attributes are: Name: " + p.name + " Species: " + p.species + " Age: " + p.age + " Color: " + p.color);
 
+                index++;
+            }
+
+        }
     }
 }

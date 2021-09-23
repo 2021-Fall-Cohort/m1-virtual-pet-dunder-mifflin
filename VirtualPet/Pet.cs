@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace VirtualPet
 {
     public class Pet
@@ -68,12 +69,14 @@ namespace VirtualPet
         }
 
         public void PetStatus()
+
         {
             Console.WriteLine("Your Pet Status is: Hunger: " + this.hunger + " Health: " + this.health + " Boredom: " + this.boredom);
             Console.WriteLine("Your Pet Attributes are: Name: " + this.name + " Species: " + this.species + " Age: " + this.age + " Color: " + this.color);
         }
 
+        
+        }
+
 
     }
-}
-

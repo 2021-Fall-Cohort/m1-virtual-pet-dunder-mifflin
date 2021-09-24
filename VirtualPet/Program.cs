@@ -13,6 +13,7 @@ namespace VirtualPet
         public static void Tick(Object o)
         {
             myPet.Update();
+
             //myShelter.Update();
         }
 

@@ -76,11 +76,11 @@ namespace VirtualPet.Tests
         [Fact]
         public void GetSpecies_Should_Get_Pet_Species_Value()
         {
-        //    testPet.SetSpecies("Dog");
+         testPet.SetSpecies("Dog");
 
-        //    string testPetSpecies = testPet.SetSpecies();
+        string testPetSpecies = testPet.GetSpecies();
 
-        //    Assert.Equal("Dog", testPet.species);
+        Assert.Equal("Dog", testPetSpecies);
         }
 
         [Fact] // passes!
@@ -94,10 +94,10 @@ namespace VirtualPet.Tests
         [Fact]
         public void GetHunger_Should_Return_Initial_Hunger_Level_Of_50()
         {
-            //int testPetHunger = testPet.GetHunger();
-            //testPet.hunger = 50;
+            int testPetHunger = testPet.GetHunger();
+            testPet.hunger = 50;
 
-            //Assert.Equal(50, testPetHunger);
+            Assert.Equal(50, testPetHunger);
         }
 
         [Fact]// passes
@@ -111,9 +111,9 @@ namespace VirtualPet.Tests
         [Fact]
         public void GetBoredom_Should_Return_Initial_Boredom_Level_Of_0() //Our pets were not bored until they came to our care
         {
-            //int testPetBoredom = testPet.GetBoredom();
-            //testPet.boredom = 0;
-            //Assert.Equal(0, testPetBoredom);
+            int testPetBoredom = testPet.GetBoredom();
+            testPet.boredom = 0;
+            Assert.Equal(0, testPetBoredom);
         }
 
         [Fact]// passes
@@ -127,75 +127,75 @@ namespace VirtualPet.Tests
         [Fact]
         public void GetHealth_Should_Return_Initial_Health_Level_Of_30()
         {
-            // int testPetHealth = testPet.GetHealth();
-            // testPet.health = 30;
-            // Assert.Equal(30, testPetHealth);
+            int testPetHealth = testPet.GetHealth();
+            testPet.health = 30;
+            Assert.Equal(30, testPetHealth);
         }
 
         [Fact]
         public void Feed_Should_Decrease_Hunger_By_100() // feeding our pets completely satiates them!
 
         {
-            // testPet.hunger = 50;
-            // testPet.feed();
+            //testPet.hunger = 50;
+            //testPet.feed();
             
-            // Assert.Equal(0, testPet.GetHunger());
+            //Assert.Equal(0, testPet.GetHunger());
         }
 
         [Fact]
         public void SeeDoctor_Should_Increase_Health_to_100() // our Vets completely heal our Pets
         {
-            // testPet.TakePetToVet();
+            testPet.Doctor();
 
-            // Assert.Equal(100, testPet.GetHealth());
+            Assert.Equal(100, testPet.GetHealth());
         }
 
         [Fact]
         public void Play_Should_Increase_Hunger_By_10()
         {
-            //testPet.Play();
+            testPet.Play();
 
-            //Assert.Equal(60, testPet.GetHunger());
+            Assert.Equal(60, testPet.GetHunger());
         }
 
         [Fact]
         public void Play_Should_Decrease_Boredom_By_20()
         {
-            // testPet.Play();
+            testPet.Play();
 
-            // Assert.Equal(40, testPet.GetBoredom());
+            Assert.Equal(40, testPet.GetBoredom());
         }
 
         [Fact]
         public void Play_Should_Increase_Health_By_10()
         {
-            // testPet.Play();
+            testPet.Play();
 
-            // Assert.Equal(40, testPet.GetHealth());
+            Assert.Equal(40, testPet.GetHealth());
         }
 
         [Fact]
         public void Tick_Should_Increase_Hunger_By_10()
         {
-            // testPet.Tick();
+            testPet.Tick();
 
-            // Assert.Equal(55, testPet.GetHunger());
+            Assert.Equal(55, testPet.GetHunger());
         }
 
         [Fact]
         public void Tick_Should_Increase_Boredom_By_10()
         {
-            // testPet.Tick();
+            testPet.Tick();
 
-            // Assert.Equal(65, testPet.GetBoredom());
+            Assert.Equal(65, testPet.GetBoredom());
         }
 
         [Fact]
         public void Tick_Should_Decrease_Health_By_10()
         {
-            // testPet.Tick();
+            testPet.Tick();
 
-            // Assert.Equal(25, testPet.GetHealth());
+            Assert.Equal(25, testPet.GetHealth());
         }
     }
 }

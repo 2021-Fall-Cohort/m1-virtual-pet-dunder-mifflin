@@ -47,14 +47,27 @@ namespace VirtualPet
             this.hunger = 0;
 
         }
+
+
         public void Feed(int amt)
         {
             // what does feeding a specific amount of food do?
         }
+
+        public int GetBoredom ()
+        { return boredom; }
+
+        public int GetHealth ()
+        { return health; }
+
+        public int GetHunger()
+        { return hunger; }
+
+        public string GetSpecies()
+        { return species; }
+
         public void Doctor()
-        {
-            this.health = 100;
-        }
+        { this.health = 100; }
         public void Play()
         {
             // what does playing do?
@@ -62,7 +75,8 @@ namespace VirtualPet
             this.hunger += 10;
             this.health += 10;
         }
-
+        
+       
         public void Update()
         {
             // increases hunger

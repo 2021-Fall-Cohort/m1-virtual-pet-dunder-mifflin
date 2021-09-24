@@ -7,7 +7,7 @@ namespace VirtualPet
     {
         public static Pet myPet = new Pet();
         public static Shelter myShelter = new Shelter();
-        public static RobotPet myRobotPet = new RobotPet();
+        //public static RobotPet myRobotPet = new RobotPet();
         public static Timer _timer = null; //Status Timer
         public static void Tick(Object o)
         {
@@ -122,8 +122,16 @@ namespace VirtualPet
             Console.WriteLine("What is the color of your pet");
             string color = Console.ReadLine();
 
-                            myPet = new Pet(robot, name, species, age, color);
-                myShelter.ListOfPets.Add(myPet);
+            if (robot)
+            {
+                myShelter.ListOfPets.Add(new RobotPet(robot, name, species, age, color));
+            }
+            else
+            {
+                myShelter.ListOfPets.Add(new Pet(robot, name, species, age, color));
+            }
+                            
+                
             
                    
 
@@ -232,9 +240,9 @@ namespace VirtualPet
 
             // Enter your solution here
             Console.WriteLine("Select the robotic pet you wish to charge battery");
-            Pet myPet = myShelter.SelectPet();
+            RobotPet myPet = (RobotPet)myShelter.SelectPet();
             
-            myRobotPet.Charge();
+          myPet.Charge();
             Console.WriteLine("\n" + myPet.name + " is fully charged!\n");
 
             
@@ -250,8 +258,8 @@ namespace VirtualPet
 
             // Enter your solution here
             Console.WriteLine("Select the Robotic pet you wish to take in for maintenance");
-            Pet myPet = myShelter.SelectPet();
-            myRobotPet.Factory();
+            RobotPet myPet = (RobotPet)myShelter.SelectPet();
+            myPet.Factory();
             Console.WriteLine("\n" + myPet.name + " is feeling so much better now!\n");
 
 

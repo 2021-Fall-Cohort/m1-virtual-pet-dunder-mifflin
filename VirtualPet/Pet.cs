@@ -34,7 +34,6 @@ namespace VirtualPet
             this.health = 100;
             this.battery = 100;
             this.maintenance = 100;
-            this.model = model;
         }
 
         public Pet()

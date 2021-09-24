@@ -16,17 +16,24 @@ namespace VirtualPet
         public RobotPet(bool robot, string name, string model, int age, string color)
 
         {
+            this.name = name;
+            this.robot = robot;
             this.battery = 100;
             this.maintenance = 100;
             this.model = model;
+            this.age = age;
+            this.color = color;
         }
 
         public RobotPet()
         {
+            this.name = "Default Robot Pet";
             this.battery = 100;
             this.maintenance = 100;
             this.model = null;
-
+            this.robot = true;
+            this.age = 0;
+            this.color = null;
         }
 
 

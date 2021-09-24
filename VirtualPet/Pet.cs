@@ -7,9 +7,11 @@ namespace VirtualPet
 {
     public class Pet
     { 
-        public void SetName(string name) { }
+        public void SetName(string name) { 
+        }
         public void SetSpecies(string species)
-    { }
+        { 
+        }
     
         public string name;
         public string species;
@@ -96,7 +98,6 @@ namespace VirtualPet
             boredom += 10;
             health -= 10;
             battery -= 10;
-            boredom += 10;
             maintenance -= 10;
 
         }

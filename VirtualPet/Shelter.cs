@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VirtualPet
 {
-    class Shelter
+    public class Shelter
     {
         public List<Pet> ListOfPets = new List<Pet>();
 
@@ -46,6 +46,13 @@ namespace VirtualPet
             }
                
 
+        }
+        public void Tick()
+        {
+            foreach (Pet p in ListOfPets)
+            {
+                p.Tick();
+            }
         }
     }
 }

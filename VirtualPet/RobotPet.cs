@@ -12,7 +12,8 @@ namespace VirtualPet
         public int maintenance;
         public string model;
 
-        public RobotPet(string name, string model, int age, string color)
+
+        public RobotPet(bool robot, string name, string model, int age, string color)
 
         {
             this.battery = 100;
@@ -62,6 +63,7 @@ namespace VirtualPet
         {
             Console.WriteLine("Your Pet Status is: Battery Level: " + this.battery + " Maintenance: " + this.maintenance + " Boredom: " + this.boredom);
             Console.WriteLine("Your Pet Attributes are: Name: " + this.name + " Model: " + this.model + " Age: " + this.age + " Color: " + this.color);
+            Console.WriteLine(this.name + " is a robotic pet.\n");
         }
         //status display
 

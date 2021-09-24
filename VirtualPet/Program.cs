@@ -8,15 +8,20 @@ namespace VirtualPet
         public static Pet myPet = new Pet();
         public static Shelter myShelter = new Shelter();
         public static Timer _timer = null; //Status Timer
-
+        public static Pet testPet = new Pet();
+        
         public static void Tick(Object o)
         {
             myPet.Update();
+
             //myShelter.Update();
         }
 
         public static void Main(string[] args)
         {
+            Pet testPet = new Pet();
+            testPet.name = "Fido";
+        
          
             _timer = new Timer(Tick, null, 0, 30000);
 

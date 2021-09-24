@@ -6,7 +6,11 @@ using System.Text;
 namespace VirtualPet
 {
     public class Pet
-    {
+    { 
+        public void SetName(string name) { }
+        public void SetSpecies(string species)
+    { }
+    
         public string name;
         public string species;
         public int age;
@@ -15,7 +19,7 @@ namespace VirtualPet
         public int boredom;
         public int health;
         public Pet(string name, string species, int age, string color)
-
+        
         {
             this.name = name;
             this.species = species;
@@ -43,20 +47,36 @@ namespace VirtualPet
             this.hunger = 0;
 
         }
+
+
         public void Feed(int amt)
         {
             // what does feeding a specific amount of food do?
         }
+
+        public int GetBoredom ()
+        { return boredom; }
+
+        public int GetHealth ()
+        { return health; }
+
+        public int GetHunger()
+        { return hunger; }
+
+        public string GetSpecies()
+        { return species; }
+
         public void Doctor()
-        {
-            this.health = 100;
-        }
+        { this.health = 100; }
         public void Play()
         {
             // what does playing do?
             this.boredom = 0;
+            this.hunger += 10;
+            this.health += 10;
         }
-
+        
+       
         public void Update()
         {
             // increases hunger

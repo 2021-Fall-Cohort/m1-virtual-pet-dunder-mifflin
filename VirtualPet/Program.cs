@@ -9,16 +9,18 @@ namespace VirtualPet
         public static Shelter myShelter = new Shelter();
         public static RobotPet myRobotPet = new RobotPet();
         public static Timer _timer = null; //Status Timer
-        
-
         public static void Tick(Object o)
         {
             myPet.Update();
+
             //myShelter.Update();
         }
 
         public static void Main(string[] args)
         {
+            Pet testPet = new Pet();
+            testPet.name = "Fido";
+        
          
             _timer = new Timer(Tick, null, 0, 30000);
 
@@ -60,7 +62,9 @@ namespace VirtualPet
                         break;
                    case "6":
                      RemovePet();
-                       break;
+
+                      break;
+
                     case "7":
                       CheckAllPets();
                         break;

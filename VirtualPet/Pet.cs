@@ -6,7 +6,11 @@ using System.Text;
 namespace VirtualPet
 {
     public class Pet
-    {
+    { 
+        public void SetName(string name) { }
+        public void SetSpecies(string species)
+    { }
+    
         public string name;
         public string species;
         public int age;
@@ -19,7 +23,6 @@ namespace VirtualPet
         public int maintenance;
         public string model;
         public Pet(bool robot, string name, string species, int age, string color)
-
         {
             this.robot = robot;
             this.name = name;
@@ -55,20 +58,36 @@ namespace VirtualPet
             this.hunger = 0;
 
         }
+
+
         public void Feed(int amt)
         {
             // what does feeding a specific amount of food do?
         }
+
+        public int GetBoredom ()
+        { return boredom; }
+
+        public int GetHealth ()
+        { return health; }
+
+        public int GetHunger()
+        { return hunger; }
+
+        public string GetSpecies()
+        { return species; }
+
         public void Doctor()
-        {
-            this.health = 100;
-        }
+        { this.health = 100; }
         public void Play()
         {
             // what does playing do?
             this.boredom = 0;
+            this.hunger += 10;
+            this.health += 10;
         }
-
+        
+       
         public void Update()
         {
             // increases hunger
@@ -90,7 +109,6 @@ namespace VirtualPet
                 Console.WriteLine("Your Pet Status is: Hunger: " + this.hunger + " Health: " + this.health + " Boredom: " + this.boredom);
                 Console.WriteLine("Your Pet Attributes are: Name: " + this.name + " Species: " + this.species + " Age: " + this.age + " Color: " + this.color);
                 Console.WriteLine(this.name + " is an organic pet.\n");
-
             }
 
             if (this.robot == true)
@@ -106,6 +124,7 @@ namespace VirtualPet
 
 
     }
+
 
     //Create Pet Class (properties and method should go in PET class and not Program
     //*Ability for players to see the current status of a pet, such as hunger, boredom, and health

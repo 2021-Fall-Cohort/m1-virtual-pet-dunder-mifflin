@@ -11,9 +11,9 @@ namespace VirtualPet
         public static Timer _timer = null; //Status Timer
         public static void Tick(Object o)
         {
-            myPet.Tick();
+            //myPet.Tick();
 
-            //myShelter.Tick();
+            myShelter.Tick();
         }
 
         public static void Main(string[] args)
@@ -22,7 +22,7 @@ namespace VirtualPet
             testPet.name = "Fido";
         
          
-            _timer = new Timer(Tick, null, 0, 30000);
+            _timer = new Timer(Tick, null, 0, 15000);
 
 
             bool keepThinking = true;

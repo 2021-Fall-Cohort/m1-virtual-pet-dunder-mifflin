@@ -16,7 +16,7 @@ namespace VirtualPet.Tests
         public void Pet_Constructor_Should_Instantiate_Pet_Object()
         {
             // Act
-            Pet testPet = new Pet("George", "dog", 12, "green");
+            Pet testPet = new Pet(false, "George", "dog", 12, "green");
 
             Assert.NotNull(testPet);
         }

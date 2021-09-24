@@ -41,7 +41,7 @@ namespace VirtualPet
                 if (p.robot == true)
                 {
                     Console.WriteLine("\nYour Pet Status is: Battery Level: " + p.battery + " Maintenance: " + p.maintenance + " Boredom: " + p.boredom);
-                    Console.WriteLine("Your Pet Attributes are: Robotic - Name: " + p.name + " Model: " + p.model + " Age: " + p.age + " Color: " + p.color);
+                    Console.WriteLine("Your Pet Attributes are: Robotic - Name: " + p.name + " Model: " + p.species + " Age: " + p.age + " Color: " + p.color);
                 }
             }
                

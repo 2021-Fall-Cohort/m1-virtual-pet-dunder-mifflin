@@ -7,7 +7,9 @@ namespace VirtualPet
     {
         public static Pet myPet = new Pet();
         public static Shelter myShelter = new Shelter();
+        public static RobotPet myRobotPet = new RobotPet();
         public static Timer _timer = null; //Status Timer
+        
 
         public static void Tick(Object o)
         {
@@ -35,6 +37,8 @@ namespace VirtualPet
                 Console.WriteLine("5. Take pet to vet");
                 Console.WriteLine("6. Remove Pet");
                 Console.WriteLine("7. Check Status of All Pets");
+                Console.WriteLine("8. Charge Robotic Pet Battery");
+                Console.WriteLine("9. Send Robotic Pet to Factory for Maintenance");
                 Console.WriteLine("Press Q to quit");
                 string userChoice = Console.ReadLine().ToLower();
                 switch (userChoice)
@@ -54,11 +58,17 @@ namespace VirtualPet
                     case "5":
                         TakePettoVet();
                         break;
-                   // case "6":
-                     //   Remove Pet();
-                       // break;
+                   case "6":
+                     RemovePet();
+                       break;
                     case "7":
                       CheckAllPets();
+                        break;
+                    case "8":
+                        ChargeBattery();
+                        break;
+                    case "9":
+                        PetMaintenance();
                         break;
                     case "q":
                         keepThinking = false;
@@ -76,14 +86,30 @@ namespace VirtualPet
             Console.Clear();
             Console.WriteLine("Create Your Pet\n");
 
+            bool robot;
+
+            Console.WriteLine("Is this a robotic pet or an organic pet?\n 1 for robotic \n 2 for organic ");
+            int R = Convert.ToInt32(Console.ReadLine()); 
+            if (R == 1)
+                robot = true;
+            else
+                robot = false;
+            
 
             Console.WriteLine("What is the name of your pet");
             string name = Console.ReadLine();
 
-
-            Console.WriteLine("What is the species of your pet");
+            if (robot == true)
+            {
+                Console.WriteLine("What is the model of your pet");
+      
+            }
+            if (robot == false)
+            {
+                Console.WriteLine("What is the species of your pet");
+                
+            }
             string species = Console.ReadLine();
-
 
             Console.WriteLine("What is the age of your pet");
             int age = Convert.ToInt32(Console.ReadLine());
@@ -92,9 +118,10 @@ namespace VirtualPet
             Console.WriteLine("What is the color of your pet");
             string color = Console.ReadLine();
 
-
-           myPet = new Pet(name, species, age, color);
-           myShelter.ListOfPets.Add(myPet);
+                            myPet = new Pet(robot, name, species, age, color);
+                myShelter.ListOfPets.Add(myPet);
+            
+                   
 
             Console.WriteLine("Thank you for bringing this animal to the shelter.  It is in good hands and will be adopted out ASAP!\n");
 
@@ -183,7 +210,7 @@ namespace VirtualPet
             Console.ReadLine();
         }
 
-        public static void AdoptPetFromShelter()
+        public static void RemovePet()
         {
 
             Console.WriteLine("Welcome to the Shelter!  Here is a list of the pets available for adoption.\n");
@@ -191,6 +218,41 @@ namespace VirtualPet
             //selectedPet.shelter();
 
             myShelter.ListOfPets.Remove(selectedPet);
+        }
+
+        public static void ChargeBattery()
+        {
+
+            Console.Clear();
+            Console.WriteLine("Charge Robotic Pet Battery\n");
+
+            // Enter your solution here
+            Console.WriteLine("Select the robotic pet you wish to charge battery");
+            Pet myPet = myShelter.SelectPet();
+            
+            myRobotPet.Charge();
+            Console.WriteLine("\n" + myPet.name + " is fully charged!\n");
+
+            
+            Console.Write("Press enter to return to the Main Menu");
+            Console.ReadLine();
+        }
+        public static void PetMaintenance()
+        {
+
+
+            Console.Clear();
+            Console.WriteLine("Take Robotic Pet in for Maintenance\n");
+
+            // Enter your solution here
+            Console.WriteLine("Select the Robotic pet you wish to take in for maintenance");
+            Pet myPet = myShelter.SelectPet();
+            myRobotPet.Factory();
+            Console.WriteLine("\n" + myPet.name + " is feeling so much better now!\n");
+
+
+            Console.Write("Press enter to return to the Main Menu");
+            Console.ReadLine();
         }
     }
 }

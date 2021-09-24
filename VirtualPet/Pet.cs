@@ -14,9 +14,14 @@ namespace VirtualPet
         public int hunger;
         public int boredom;
         public int health;
-        public Pet(string name, string species, int age, string color)
+        public bool robot;
+        public int battery;
+        public int maintenance;
+        public string model;
+        public Pet(bool robot, string name, string species, int age, string color)
 
         {
+            this.robot = robot;
             this.name = name;
             this.species = species;
             this.age = age;
@@ -24,10 +29,14 @@ namespace VirtualPet
             this.hunger = 0;
             this.boredom = 0;
             this.health = 100;
+            this.battery = 100;
+            this.maintenance = 100;
+            this.model = model;
         }
 
         public Pet()
         {
+            this.robot = false;
             this.name = "Default Pet";
             this.species = null;
             this.age = 0;
@@ -35,6 +44,9 @@ namespace VirtualPet
             this.hunger = 0;
             this.boredom = 0;
             this.health = 100;
+            this.battery = 100;
+            this.maintenance = 100;
+            this.model = null;
         }
 
         public void Feed()
@@ -65,21 +77,39 @@ namespace VirtualPet
             hunger += 10;
             boredom += 10;
             health -= 10;
+            battery -= 10;
+            boredom += 10;
+            maintenance -= 10;
 
         }
 
         public void PetStatus()
-
         {
-            Console.WriteLine("Your Pet Status is: Hunger: " + this.hunger + " Health: " + this.health + " Boredom: " + this.boredom);
-            Console.WriteLine("Your Pet Attributes are: Name: " + this.name + " Species: " + this.species + " Age: " + this.age + " Color: " + this.color);
-        }
+            if (this.robot == false)
+            {
+                Console.WriteLine("Your Pet Status is: Hunger: " + this.hunger + " Health: " + this.health + " Boredom: " + this.boredom);
+                Console.WriteLine("Your Pet Attributes are: Name: " + this.name + " Species: " + this.species + " Age: " + this.age + " Color: " + this.color);
+                Console.WriteLine(this.name + " is an organic pet.\n");
 
-        
-        }
+            }
 
-//Create Pet Class (properties and method should go in PET class and not Program
-//*Ability for players to see the current status of a pet, such as hunger, boredom, and health
-//Ability for players to interact with pet, such as feed, play, and take to doctor
-//As players interact with pet, the pet’s status changes
-//constructor
+            if (this.robot == true)
+            {
+                {
+                    Console.WriteLine("Your Pet Status is: Battery Level: " + this.battery + " Maintenance: " + this.maintenance + " Boredom: " + this.boredom);
+                    Console.WriteLine("Your Pet Attributes are: Name: " + this.name + " Model: " + this.species + " Age: " + this.age + " Color: " + this.color);
+                    Console.WriteLine(this.name + " is a robotic pet.\n");
+                }
+            }
+        }
+           
+
+
+    }
+
+    //Create Pet Class (properties and method should go in PET class and not Program
+    //*Ability for players to see the current status of a pet, such as hunger, boredom, and health
+    //Ability for players to interact with pet, such as feed, play, and take to doctor
+    //As players interact with pet, the pet’s status changes
+    //constructor
+}

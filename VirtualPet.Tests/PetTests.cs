@@ -136,10 +136,10 @@ namespace VirtualPet.Tests
         public void Feed_Should_Decrease_Hunger_By_100() // feeding our pets completely satiates them!
 
         {
-            //testPet.hunger = 50;
-            //testPet.feed();
+            testPet.hunger = 50;
+            testPet.Feed();
             
-            //Assert.Equal(0, testPet.GetHunger());
+            Assert.Equal(0, testPet.GetHunger());
         }
 
         [Fact]

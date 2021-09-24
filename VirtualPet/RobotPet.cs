@@ -11,6 +11,7 @@ namespace VirtualPet
         public int battery;
         public int maintenance;
         public string model;
+        
 
         public RobotPet(string name, string model, int age, string color)
 
@@ -18,6 +19,8 @@ namespace VirtualPet
             this.battery = 100;
             this.maintenance = 100;
             this.model = model;
+            this.age = age;
+            this.color = color;
         }
 
         public RobotPet()
@@ -25,7 +28,9 @@ namespace VirtualPet
             this.battery = 100;
             this.maintenance = 100;
             this.model = null;
-
+            this.robot = true;
+            this.age = age;
+            this.color = color;
         }
 
 

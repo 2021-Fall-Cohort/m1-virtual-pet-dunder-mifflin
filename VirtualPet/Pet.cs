@@ -77,7 +77,7 @@ namespace VirtualPet
         }
         
        
-        public void Update()
+        public void Tick()
         {
             // increases hunger
             // decreases health

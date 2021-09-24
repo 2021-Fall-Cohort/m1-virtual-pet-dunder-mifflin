@@ -12,9 +12,9 @@ namespace VirtualPet
         
         public static void Tick(Object o)
         {
-            myPet.Update();
+            myPet.Tick();
 
-            //myShelter.Update();
+            //myShelter.Tick();
         }
 
         public static void Main(string[] args)
@@ -109,7 +109,6 @@ namespace VirtualPet
 
         public static void CheckPetStatus()
         {
-
             Console.Clear();
             Console.WriteLine("Check Pet Status\n");
 

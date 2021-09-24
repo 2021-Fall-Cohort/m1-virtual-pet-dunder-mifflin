@@ -21,7 +21,7 @@ namespace VirtualPet
             int index = 1;
             foreach (Pet p in ListOfPets)
             {
-                Console.WriteLine(index + ". " + p.name);
+                Console.WriteLine(index + ". " + p.name + " - Robotic: " + p.robot);
                 index++;
             }
             int indexSelected = Convert.ToInt32(Console.ReadLine());
@@ -32,9 +32,19 @@ namespace VirtualPet
         {
             foreach (Pet p in ListOfPets)
             {
-                Console.WriteLine("Your Pet Status is: Hunger: " + p.hunger + " Health: " + p.health + " Boredom: " + p.boredom);
-                Console.WriteLine("Your Pet Attributes are: Name: " + p.name + " Species: " + p.species + " Age: " + p.age + " Color: " + p.color);
+                if (p.robot == false)
+                {
+                    Console.WriteLine("\nYour Pet Status is: Hunger: " + p.hunger + " Health: " + p.health + " Boredom: " + p.boredom);
+                    Console.WriteLine("Your Pet Attributes are: Organic - Name: " + p.name + " Species: " + p.species + " Age: " + p.age + " Color: " + p.color);
+                }
+
+                if (p.robot == true)
+                {
+                    Console.WriteLine("\nYour Pet Status is: Battery Level: " + p.battery + " Maintenance: " + p.maintenance + " Boredom: " + p.boredom);
+                    Console.WriteLine("Your Pet Attributes are: Robotic - Name: " + p.name + " Model: " + p.species + " Age: " + p.age + " Color: " + p.color);
+                }
             }
+               
 
         }
     }

@@ -5,7 +5,7 @@ namespace VirtualPet.Tests
 {
     public class PetTests
     {
-        private Pet testPet;
+        public Pet testPet;
 
         public PetTests()
         {

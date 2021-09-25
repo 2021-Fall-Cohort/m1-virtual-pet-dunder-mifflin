@@ -28,6 +28,12 @@ namespace VirtualPet
 
             return ListOfPets[indexSelected - 1];
         }
+
+        public static void testShelter(Shelter shelter)
+        {
+            throw new NotImplementedException();
+        }
+
         public void allPetsStatus()
         {
             foreach (Pet p in ListOfPets)

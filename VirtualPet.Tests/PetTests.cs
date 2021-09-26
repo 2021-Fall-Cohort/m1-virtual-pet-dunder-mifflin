@@ -176,10 +176,12 @@ namespace VirtualPet.Tests
 
         [Fact]
         public void Tick_Should_Increase_Hunger_By_10()
+
         {
+
             testPet.Tick();
 
-            Assert.Equal(55, testPet.GetHunger());
+            Assert.Equal(10, testPet.GetHunger());
         }
 
         [Fact]

@@ -12,18 +12,16 @@ namespace VirtualPet.Tests
         {
             testShelter = new Shelter();
         }
-        [Fact]
+        [Fact]// passes
         public void CreatePet_Should_Return_Pet()
         {
-
             //arrange
             var testPet = new Pet();
             //act
             var result = testPet = new Pet();
             //assert
             Assert.NotNull(testPet);
-     
-    }
+        }
 
    }
 }

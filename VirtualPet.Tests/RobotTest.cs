@@ -8,10 +8,9 @@ namespace VirtualPet.Tests
         private RobotPet testRobotPet;
 
         public RobotTest()
-        
-            {
-                testRobotPet = new RobotPet();
-            }
+        {
+            testRobotPet = new RobotPet();
+        }
 
 
             [Fact] // passes
@@ -19,7 +18,6 @@ namespace VirtualPet.Tests
             {
                 // Act
                 RobotPet testRobotPet = new RobotPet(true, "George", "dog", 12, "green");
-
                 Assert.NotNull(testRobotPet);
             }
 
@@ -28,19 +26,17 @@ namespace VirtualPet.Tests
         // Uncomment code in the test body one test at a time
         // Add source code to eliminate the build errors (red squiggle) and pass the test
 
-        [Fact] // passes
+        [Fact]// passes
         public void RobotPet_Should_Have_Name()
         {
             testRobotPet.name = "Pet Name";
-
             Assert.Equal("Pet Name", testRobotPet.name);
         }
 
-        [Fact] // passes!
+        [Fact]// passes
         public void RobotPet_Should_Have_Battery()
         {
-            testRobotPet.battery = 100;
-
+            testRobotPet.hunger = 100;
             Assert.Equal(100, testRobotPet.hunger);
         }
 

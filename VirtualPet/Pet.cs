@@ -7,7 +7,8 @@ namespace VirtualPet
 {
     public class Pet
     { 
-        public void SetName(string name) { 
+        public void SetName(string name) 
+        { 
         }
         public void SetSpecies(string species)
         { 
@@ -53,53 +54,48 @@ namespace VirtualPet
             this.model = null;
         }
 
+        // what does feeding do?
         public void Feed()
         {
-            // what does feeding do?
-            this.hunger = 0;
-
+             this.hunger = 0;
         }
 
-
+        // what does feeding a specific amount of food do?
         public void Feed(int amt)
         {
-            // what does feeding a specific amount of food do?
         }
 
         public int GetBoredom ()
         { return boredom; }
-
         public int GetHealth ()
         { return health; }
-
         public int GetHunger()
         { return hunger; }
-
         public string GetSpecies()
         { return species; }
-
+ 
+        // what does taking pet to vet do?
         public void Doctor()
         { this.health = 100; }
+
+        // what does playing do?
         public void Play()
         {
-            // what does playing do?
-            this.boredom = 0;
+            this.boredom -= 20;
             this.hunger += 10;
-            this.health += 10;
+            this.health += 20;
         }
-        
-       
+
+        // increases hunger
+        // decreases health
+        // ...      
         public void Tick()
         {
-            // increases hunger
-            // decreases health
-            // ...
             hunger += 10;
             boredom += 10;
             health -= 10;
             battery -= 10;
             maintenance -= 10;
-
         }
 
         public void PetStatus()
@@ -110,7 +106,6 @@ namespace VirtualPet
                 Console.WriteLine("Your Pet Attributes are: Name: " + this.name + " Species: " + this.species + " Age: " + this.age + " Color: " + this.color);
                 Console.WriteLine(this.name + " is an organic pet.\n");
             }
-
             if (this.robot == true)
             {
                 {

@@ -8,14 +8,12 @@ namespace VirtualPet
 {
     public class Shelter
     {
-        public List<Pet> ListOfPets = new List<Pet>();
-
-
         // name
-        // list of pets - name only
-
         // maximum occupancy
 
+        public List<Pet> ListOfPets = new List<Pet>();
+
+        // list of pets - name only
         public Pet SelectPet()
         {
             int index = 1;
@@ -25,7 +23,6 @@ namespace VirtualPet
                 index++;
             }
             int indexSelected = Convert.ToInt32(Console.ReadLine());
-
             return ListOfPets[indexSelected - 1];
         }
 
